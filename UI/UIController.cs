@@ -24,7 +24,7 @@ namespace UI
             operationButtonManager = _operationPanel.GetComponent<OperationButtonManager>();
         }
 
-        private void Start()
+        void Start()
         {
             Cursor.visible = false;  
         }
