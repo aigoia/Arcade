@@ -70,7 +70,6 @@ namespace Arcade
             _speedInput = Input.GetAxis("Vertical") < 0 ? Input.GetAxis("Vertical") * 100f : 
                           Input.GetAxis("Vertical") > 0 ? Input.GetAxis("Vertical") * Setting.ReverseAccelerator * 100f : 0;
             _turnInput = Input.GetAxis("Horizontal");
-            // _jumpInput = Input.GetAxis("Jump") * 100f;
             _jumpInput = Input.GetAxis("FireLeft") * 100f;
 
             if (_isGround) transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3

@@ -25,22 +25,22 @@ namespace UI
         
         void Awake()
         {
-            _darker = GameObject.Find("Darker");
-            darkerImage = _darker.GetComponent<Image>();
+            _darker ??= GameObject.Find("Darker");
+            darkerImage ??= _darker.GetComponent<Image>();
             darkerImage.enabled = true;
             _darker.SetActive(false);
             
-            _buttonPanel = GameObject.Find("ButtonPanel");
-            _operationButtons = FindObjectsOfType<OperationButton>().ToList();
-            _buttonAnimator = _buttonPanel.GetComponent<Animator>();
+            _buttonPanel ??= GameObject.Find("ButtonPanel");
+            _operationButtons ??= FindObjectsOfType<OperationButton>().ToList();
+            _buttonAnimator ??= _buttonPanel.GetComponent<Animator>();
             
-            _leftTopAnimator = GameObject.Find("LeftTopPanel").GetComponent<Animator>();
-            _rightTopAnimator = GameObject.Find("RightTopPanel").GetComponent<Animator>();
-            _leftBottomAnimator = GameObject.Find("LeftBottomPanel").GetComponent<Animator>();
-            _rightBottomAnimator = GameObject.Find("RightBottomPanel").GetComponent<Animator>();
+            _leftTopAnimator ??= GameObject.Find("LeftTopPanel").GetComponent<Animator>();
+            _rightTopAnimator ??= GameObject.Find("RightTopPanel").GetComponent<Animator>();
+            _leftBottomAnimator ??= GameObject.Find("LeftBottomPanel").GetComponent<Animator>();
+            _rightBottomAnimator ??= GameObject.Find("RightBottomPanel").GetComponent<Animator>();
 
-            _continueButton = GameObject.Find("Continue").GetComponent<Button>();
-            _thisButton = GetComponent<Button>();
+            _continueButton ??= GameObject.Find("Continue").GetComponent<Button>();
+            _thisButton ??= GetComponent<Button>();
         }
 
         void Start()
@@ -68,7 +68,6 @@ namespace UI
         
         public void OnPlay()
         {
-            
             _thisButton.onClick.Invoke();
             
             _buttonAnimator.Play(_darker.activeSelf ? "Hide" : "Show");

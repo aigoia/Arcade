@@ -20,8 +20,8 @@ namespace UI
 
         void Awake()
         {
-            _operationPanel = GameObject.Find("OperationPanel");
-            operationButtonManager = _operationPanel.GetComponent<OperationButtonManager>();
+            _operationPanel ??= GameObject.Find("OperationPanel");
+            operationButtonManager ??= _operationPanel.GetComponent<OperationButtonManager>();
         }
 
         void Start()
