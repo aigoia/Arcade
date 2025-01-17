@@ -1,29 +1,25 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
 
-namespace UI
+namespace ArcadeUI
 {
     public class UIController : MonoBehaviour
     {
         GameObject _operationPanel; 
-        
-        public OperationButtonManager operationButtonManager;
+        OperationButtonManager _operationButtonManager;
+
         public List<Animator> buttonAnimatorList;
         
-        int Selected => Animator.StringToHash("Selected");
-        int Normal => Animator.StringToHash("Normal");
+        int _selectedHash;
+        int _normalHash;
 
         void Awake()
         {
-            _operationPanel ??= GameObject.Find("OperationPanel");
-            operationButtonManager ??= _operationPanel.GetComponent<OperationButtonManager>();
+            _operationPanel = GameObject.Find("OperationPanel");
+            _operationButtonManager = _operationPanel.GetComponent<OperationButtonManager>();
+            _selectedHash = Animator.StringToHash("Selected");
+            _normalHash = Animator.StringToHash("Normal");
         }
 
         void Start()
@@ -33,7 +29,7 @@ namespace UI
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape)) operationButtonManager.OnPlay();
+            if (Input.GetKeyDown(KeyCode.Escape)) _operationButtonManager.OnPlay();
         }
     }
 }
