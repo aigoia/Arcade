@@ -18,12 +18,13 @@ namespace Arcade
 
         Rigidbody _body;
         Transform _groundRayPoint;
-        LayerMask GroundMask => LayerMask.GetMask("Ground");
+        LayerMask _groundMask;
 
         void Awake()
         {
-            _body = transform.Find("CharacterCollider").GetComponent<Rigidbody>();
-            _groundRayPoint = transform.Find("RayPoint");
+            _groundMask = LayerMask.GetMask("Ground");
+            _body ??= transform.Find("CharacterCollider").GetComponent<Rigidbody>();
+            _groundRayPoint ??= transform.Find("RayPoint");
         }
 
         void Start()
@@ -64,7 +65,7 @@ namespace Arcade
         
         bool RayGround()
         {
-            return Physics.Raycast(_groundRayPoint.position, -transform.up, out var hit, Setting.GroundRayLength, GroundMask);
+            return Physics.Raycast(_groundRayPoint.position, -transform.up, out var hit, Setting.GroundRayLength, _groundMask);
         }
 
         void Update()
