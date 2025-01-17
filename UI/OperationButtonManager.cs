@@ -13,6 +13,7 @@ namespace UI
         List<OperationButton> _operationButtons;
         Animator _buttonAnimator;
         GameObject _darker;
+        
         public Image darkerImage; 
 
         Animator _leftTopAnimator;
