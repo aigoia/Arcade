@@ -13,8 +13,10 @@ namespace UI
     public class UIController : MonoBehaviour
     {
         GameObject _operationPanel; 
+        
         public OperationButtonManager operationButtonManager;
         public List<Animator> buttonAnimatorList;
+        
         int Selected => Animator.StringToHash("Selected");
         int Normal => Animator.StringToHash("Normal");
 
@@ -31,10 +33,8 @@ namespace UI
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                operationButtonManager.OnPlay();
-            }
+            if (Input.GetKeyDown(KeyCode.Escape)) operationButtonManager.OnPlay();
+            
         }
     }
 }
