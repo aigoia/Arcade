@@ -16,10 +16,10 @@ namespace ArcadeUI
 
         void Awake()
         {
-            _operationPanel = GameObject.Find("OperationPanel");
-            _operationButtonManager = _operationPanel.GetComponent<OperationButtonManager>();
             _selectedHash = Animator.StringToHash("Selected");
             _normalHash = Animator.StringToHash("Normal");
+            _operationPanel ??= GameObject.Find("OperationPanel");
+            _operationButtonManager ??= _operationPanel.GetComponent<OperationButtonManager>();
         }
 
         void Start()
