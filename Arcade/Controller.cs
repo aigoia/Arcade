@@ -11,7 +11,9 @@ namespace Arcade
         float _jumpInput;
         bool _isGround;
         bool _isJumping;
+	
         public bool jumpMode;
+	
         Vector3 _targetDirection;
 
         Rigidbody _body;
