@@ -9,7 +9,6 @@ namespace ArcadeUI
     public class OperationButtonManager : MonoBehaviour
     {
         GameObject _buttonPanel;
-        List<OperationButton> _operationButtons;
         Animator _buttonAnimator;
         GameObject _darker;
         
@@ -31,7 +30,6 @@ namespace ArcadeUI
             _darker.SetActive(false);
             
             _buttonPanel ??= GameObject.Find("ButtonPanel");
-            _operationButtons ??= FindObjectsOfType<OperationButton>().ToList();
             _buttonAnimator ??= _buttonPanel.GetComponent<Animator>();
             
             _leftTopAnimator ??= GameObject.Find("LeftTopPanel").GetComponent<Animator>();
