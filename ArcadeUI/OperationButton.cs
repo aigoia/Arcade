@@ -1,0 +1,12 @@
+using UnityEngine;
+using UnityEngine.UIElements;
+
+namespace ArcadeUI
+{
+    public class OperationButton : MonoBehaviour
+    {
+        public Transform Background => transform.Find("Background");
+        public Animator Animator => GetComponent<Animator>();
+        public Button Button => GetComponent<Button>();
+    }
+}
