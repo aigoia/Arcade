@@ -34,7 +34,6 @@ namespace UI
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape)) operationButtonManager.OnPlay();
-            
         }
     }
 }
