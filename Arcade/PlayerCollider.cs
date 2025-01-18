@@ -10,7 +10,7 @@ namespace Arcade
         void Awake()
         {
             _blockLayer = LayerMask.NameToLayer("Block");
-            _shieldMesh ??= transform.Find("Ball").Find("Shield").gameObject;
+            _shieldMesh = transform.Find("Ball").Find("Shield").gameObject;
         }
 
         void OnCollisionEnter(Collision other)

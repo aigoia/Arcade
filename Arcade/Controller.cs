@@ -20,8 +20,8 @@ namespace Arcade
         void Awake()
         {
             _groundMask = LayerMask.GetMask("Ground");
-            _body ??= transform.Find("CharacterCollider").GetComponent<Rigidbody>();
-            _groundRayPoint ??= transform.Find("RayPoint");
+            _body = transform.Find("CharacterCollider").GetComponent<Rigidbody>();
+            _groundRayPoint = transform.Find("RayPoint");
         }
 
         void Start()
