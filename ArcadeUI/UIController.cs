@@ -8,9 +8,7 @@ namespace ArcadeUI
     {
         GameObject _operationPanel; 
         OperationButtonManager _operationButtonManager;
-
         public List<Animator> buttonAnimatorList;
-        
         int _selectedHash;
         int _normalHash;
 
