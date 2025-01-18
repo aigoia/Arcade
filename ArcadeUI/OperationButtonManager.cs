@@ -11,14 +11,11 @@ namespace ArcadeUI
         GameObject _buttonPanel;
         Animator _buttonAnimator;
         GameObject _darker;
-        
         public Image darkerImage; 
-
         Animator _leftTopAnimator;
         Animator _rightTopAnimator;
         Animator _leftBottomAnimator;
         Animator _rightBottomAnimator;
-
         Button _continueButton;
         Button _thisButton;
         
