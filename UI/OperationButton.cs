@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace ArcadeUI
+namespace UI
 {
     public class OperationButton : MonoBehaviour
     {

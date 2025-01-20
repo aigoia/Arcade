@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
 
-namespace ArcadeUI
+namespace UI
 {
     public class OperationButtonManager : MonoBehaviour
     {

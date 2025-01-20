@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cursor = UnityEngine.Cursor;
 
-namespace ArcadeUI
+namespace UI
 {
     public class UIController : MonoBehaviour
     {
