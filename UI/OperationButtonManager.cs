@@ -14,6 +14,7 @@ namespace UI
         Animator _rightTopAnimator;
         Animator _leftBottomAnimator;
         Animator _rightBottomAnimator;
+        Animator _middlePanelAnimator;
         Button _continueButton;
         Button _thisButton;
         
@@ -31,6 +32,7 @@ namespace UI
             _rightTopAnimator = GameObject.Find("RightTopPanel").GetComponent<Animator>();
             _leftBottomAnimator = GameObject.Find("LeftBottomPanel").GetComponent<Animator>();
             _rightBottomAnimator = GameObject.Find("RightBottomPanel").GetComponent<Animator>();
+            _middlePanelAnimator = GameObject.Find("MiddlePanel").GetComponent<Animator>();
 
             _continueButton = GameObject.Find("Continue").GetComponent<Button>();
             _thisButton = GetComponent<Button>();
@@ -54,7 +56,8 @@ namespace UI
             _rightTopAnimator.Play("Show");
             _leftBottomAnimator.Play("Show");
             _rightBottomAnimator.Play("Show");
-
+            _middlePanelAnimator.Play("Show");
+            
             _darker.SetActive(!_darker.activeSelf);
             Cursor.visible = false;
         }
@@ -69,6 +72,7 @@ namespace UI
             _rightTopAnimator.Play(_darker.activeSelf ? "Show" : "Hide");
             _leftBottomAnimator.Play(_darker.activeSelf ? "Show" : "Hide");
             _rightBottomAnimator.Play(_darker.activeSelf ? "Show" : "Hide");
+            _middlePanelAnimator.Play(_darker.activeSelf ? "Show" : "Hide");
             
             _darker.SetActive(!_darker.activeSelf);
             Cursor.visible = _darker.activeSelf;
