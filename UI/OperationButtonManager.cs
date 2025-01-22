@@ -48,7 +48,6 @@ namespace UI
             if (!_darker.activeSelf) return;
 
             _thisButton.onClick.Invoke();
-            print("Continue");
             
             _buttonAnimator.Play("Hide");
             
