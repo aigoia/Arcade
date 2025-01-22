@@ -1,22 +1,26 @@
 using UnityEngine;
 
-public class SkyboxRotator : MonoBehaviour
+namespace Utility
 {
-    public float rotationSpeed = 0.2f;
+    public class SkyboxRotator : MonoBehaviour
+    {
+        int Rotation => Shader.PropertyToID("_Rotation");
+        public float rotationSpeed = 0.2f;
 
-    float rotation;
+        float _rotation;
     
-    void Update()
-    {
-        rotation += rotationSpeed * Time.deltaTime;
+        void Update()
+        {
+            _rotation += rotationSpeed * Time.deltaTime;
         
-        if (rotation >= 360f) rotation = 0f;
+            if (_rotation >= 360f) _rotation = 0f;
         
-        RenderSettings.skybox.SetFloat("_Rotation", rotation);
-    }
+            RenderSettings.skybox.SetFloat(Rotation, _rotation);
+        }
 
-    void OnDisable()
-    {
-        RenderSettings.skybox.SetFloat("_Rotation", 0f);
+        void OnDisable()
+        {
+            RenderSettings.skybox.SetFloat(Rotation, 0f);
+        }
     }
 }
