@@ -9,9 +9,7 @@ namespace Arcade
     {
         void Start()
         {
-            var numbers = new List<int> { 1, 2, 3, 4, 5 };
-            
-            Helper.Print(numbers, "Numbers");
+
         }
 
         public void Exit()
